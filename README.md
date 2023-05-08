@@ -24,10 +24,10 @@ Module to create 2D renders from Minecraft skins textures.
     const skin = await readFile(path.join(__dirname, "skin.png"));
 
     // Using promises
-    renderFullBody(skin).then(render => {
+    renderFullBody(skin).then(async (render) => {
         await writeFile(path.join(__dirname, "skin_full_body.png"), render);
     });
-    renderHead(skin).then(render => {
+    renderHead(skin).then(async (render) => {
         await writeFile(path.join(__dirname, "skin_head.png"), render);
     });
 
