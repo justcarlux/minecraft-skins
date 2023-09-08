@@ -14,18 +14,18 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/LKxth/minecraft-skins.git"
+        "url": "git+https://github.com/justcarlux/minecraft-skins.git"
     },
     "keywords": [
         "minecraft",
         "skins"
     ],
-    "author": "LKxth",
+    "author": "justcarlux",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/LKxth/minecraft-skins/issues"
+        "url": "https://github.com/justcarlux/minecraft-skins/issues"
     },
-    "homepage": "https://github.com/LKxth/minecraft-skins#readme",
+    "homepage": "https://github.com/justcarlux/minecraft-skins#readme",
     "devDependencies": {
         "@types/jest": "^29.5.1",
         "@types/node": "^20.1.0",

@@ -17,7 +17,7 @@ Module to create 2D renders from Minecraft skins textures.
     import { renderFullBody, renderHead } from "minecraft-skins";
     ```
 
-2. Then, call the `renderFullBody` or `renderHead` function by passing a valid skin buffer:
+2. Then, you call the `renderFullBody` or `renderHead` function by passing a valid skin buffer:
 
     ```ts
     // Reading a file with a skin texture
@@ -54,17 +54,17 @@ renderHead(skin: Buffer | Image, options?: SkinImageOptions) => Promise<Buffer>
 ```
 Render a 2D image of the skin's head. 
 
-Both of the functions above have the same following arguments:
+Both functions above have the same following arguments:
 
 - skin (`Buffer | Image`): Skin texture.
 - options.scale (optional, `number`): Scale of the generated image. Defaults to `1`.
 - options.layers (optional, `boolean`): If the renderer should include the layers of the skin. Defaults to `true`.
 
-Both of the functions return a `Promise` with the `Buffer` of the image, or throw an error if something happens during the process.
+Both functions return a `Promise` with the `Buffer` of the image, or throw an error if something happens during the process.
 
 # `checkSlim`
 ```ts
 checkSlim(skin: Buffer | Image) => Promise<boolean>
 // Image class belongs to canvas
 ```
-Utility function to check if exactly the pixel located at `x=55` and `y=20` in a skin is empty. This usually means that the skin is slim (Alex based skins, `3px` arms). This pixel is near the arm textures, commonly having a color in the classic skin format. Returns a `Promise` with a `boolean` indicating if the skin is slim or not.
+Utility function to check if exactly the pixel located at `x=55` and `y=20` on a skin is empty. This usually means that the skin is slim (Alex based skins, `3px` arms). This pixel is near the arm textures, commonly having a color on the classic skin format. Returns a `Promise` with a `boolean` indicating if the skin is slim or not.
