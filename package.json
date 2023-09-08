@@ -1,6 +1,6 @@
 {
     "name": "minecraft-skins",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Module to create 2D renders from Minecraft skins textures.",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
