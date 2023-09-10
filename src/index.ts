@@ -41,7 +41,7 @@ async function renderFullBody(skin: Buffer | Image, options?: SkinImageOptions):
  * @param {options} SkinImageOptions Options for the renderer
  * @returns {Promise<Buffer>} `Buffer` of the image. Throws an error if something happened while generating the image
 */
-async function renderHead(skin: Buffer | Image, options?: SkinImageOptions): Promise<any> {
+async function renderHead(skin: Buffer | Image, options?: SkinImageOptions): Promise<Buffer> {
 
     // Load image
     const image = skin instanceof Image ? skin : await loadImage(skin);
