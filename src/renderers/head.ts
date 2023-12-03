@@ -1,16 +1,16 @@
-import { createCanvas, Image, loadImage } from "canvas";
-import { StrictSkinImageOptions } from "../utils";
+import { createCanvas, Image } from "canvas";
+import { RendererOptions } from "./structures/RendererOptions";
 
-export async function getHead(image: Image, options: StrictSkinImageOptions): Promise<Buffer> {
+export async function getHead(image: Image, { inputScale, layers, outputScale }: RendererOptions) {
 
     // Load image
-    const canvas = createCanvas(8 * options.scale, 8 * options.scale);
+    const canvas = createCanvas(8 * outputScale, 8 * outputScale);
     const ctx = canvas.getContext('2d')
     ctx.imageSmoothingEnabled = false;
 
     // Load image and draw head
-    ctx.drawImage(image, 8, 8, 8, 8, 0, 0, 8 * options.scale, 8 * options.scale);
-    if (options.layers) ctx.drawImage(image, 40, 8, 8, 8, 0, 0, 8 * options.scale, 8 * options.scale);
+    ctx.drawImage(image, 8 * inputScale, 8 * inputScale, 8 * inputScale, 8 * inputScale, 0, 0, 8 * outputScale, 8 * outputScale);
+    if (layers) ctx.drawImage(image, 40 * inputScale, 8 * inputScale, 8 * inputScale, 8 * inputScale, 0, 0, 8 * outputScale, 8 * outputScale);
 
     // Return buffer as a Promise
     return await new Promise<Buffer>((resolve, reject) => {
