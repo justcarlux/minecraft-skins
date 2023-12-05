@@ -17,7 +17,7 @@ export async function checkSlim(skin: Buffer | Image): Promise<boolean> {
     ctx.imageSmoothingEnabled = false;
 
     const image = skin instanceof Image ? skin : await loadImage(skin);
-    ctx.drawImage(image, 0, 0);
+    ctx.drawImage(image, 0, 0, 64, image.height === Math.floor(image.width / 2) ? 32 : 64);
     return ctx.getImageData(55, 20, 1, 1).data.every(e => e === 0);
 
 }
